@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>music instruments for you</title>  
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        document.body.style.backgroundColor = getColor();
+    </script>
+</head>
+<body>
+    <link rel="stylesheet" href="css/myStyle.css" />
+    
+    <div class="MPB">
+        <h2>music instruments for you</h2>
+        <style type="text/css">
+            .MPT
+            {
+                border-collapse:collapse;
+                border-style:solid;
+                background-color:lightcoral; 
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .MPT2
+            {
+                border-collapse:collapse;
+                border-style:solid;               
+            }
+            .MPT1
+            {
+                border-collapse:collapse;
+                border-style:solid;
+                background-color:lightcoral; 
+                padding-left: 25px;
+                padding-right: 25px;
+                width:60px;
+                height:60px;
+            }
+           
+        </style>
+        <div>
+            <table align="center" class="MPT2"> 
+                <tr>
+                    <td class="MPT"><a href="Home.aspx">Home page</a></td>
+                    <td class="MPT"><a href="Login.aspx">Login</a></td>
+                    <td class="MPT"><a href="OpenAll.aspx">shop</a></td>
+                    <td class="MPT"><a href="Protected.aspx">members only</a></td>
+                    <td class="MPT"><a href="Register.aspx">register</a></td>
+                    <td class="MPT"><a href="Admin.aspx">Admin</a></td>
+                    <td class="MPT"><a href="changeColor.aspx">change color</a></td>
+                </tr>   
+            </table>    
+        </div>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <table align="center" class="MPT1">
+        <tr> 
+            <td class="MPT1">
+                <a href="about the site.aspx">about this site</a>
+            </td>
+            <td align="center" class="MPT1">
+                <a href="about the creator .aspx">about the creator</a>
+            </td>
+            <td class="MPT1">               
+                <a href="contact us.aspx">contact us</a>
+            </td>
+            
+        </tr>
+    </table>    
+
+</body>
+</html>
