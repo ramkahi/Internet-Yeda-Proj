@@ -21,7 +21,7 @@
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="imagesShop/alto%20-%20sax%201.jpg" width="600" height="600"/></td>
+        <td><img src="Images/imagesShop/alto%20-%20sax%201.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>Eastar Professional Alto Saxophone E Flat Alto </h2>
             <h4>cost: $399</h4>
             <h4>returnable until 30 days of reseipt</h4>
@@ -45,7 +45,7 @@
             </h4><br />
            
            <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"/>
+                <input type="submit" id="buy" name="buy"  value="buy"  />
            </form>
         </td>   
 </table>

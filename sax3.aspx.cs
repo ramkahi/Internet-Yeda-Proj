@@ -10,18 +10,9 @@ public partial class EastarSaxophoneAlto : System.Web.UI.Page
     
     protected void Page_Load(object sender, EventArgs e)
     {
-        
-        if (Session["user"].ToString() == "guest")
-        {
-            Response.Redirect("OpenAll.aspx");
-        }
-		string sql1 = "select sax3 from [Stats] where Id = 1;";
 		if (Request.Form["buy"] != null)
 		{
-			string st = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql1, "sax3");
-			int num = Int32.Parse(st) + 1;
-			string sql2 = "update [Stats] set sax3 =" + num + " where Id = 1";
-			MyAdoHelper.DoQuery("Database.mdf", sql2);
+			Response.Redirect("Buy.aspx");
 		}
 
 	}

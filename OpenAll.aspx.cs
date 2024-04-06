@@ -18,9 +18,9 @@ public partial class OpenAll : System.Web.UI.Page
     public string num_violin3 = "";
     protected void Page_Load(object sender, EventArgs e)
     {
-		string sql1 = "select sax1 from [Stats] where Id = 1;";
-		string sql2 = "select sax2 from [Stats] where Id = 1;";
-		string sql3 = "select sax3 from [Stats] where Id = 1;";
+		string sql1 = "select saxophone1 from [Stats] where Id = 1;";
+		string sql2 = "select saxophone2 from [Stats] where Id = 1;";
+		string sql3 = "select saxophone3 from [Stats] where Id = 1;";
 		string sql4 = "select clarinet1 from [Stats] where Id = 1;";
 		string sql5 = "select clarinet2 from [Stats] where Id = 1;";
 		string sql6 = "select clarinet3 from [Stats] where Id = 1;";
@@ -28,9 +28,9 @@ public partial class OpenAll : System.Web.UI.Page
 		string sql8 = "select violin2 from [Stats] where Id = 1;";
 		string sql9 = "select violin3 from [Stats] where Id = 1;";
 
-		string st1 = MyAdoHelper.DoQueryGetInstrument("Database.mdf",sql1,"sax1");
-		string st2 = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql2, "sax2");
-		string st3 = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql3, "sax3");
+		string st1 = MyAdoHelper.DoQueryGetInstrument("Database.mdf",sql1, "saxophone1");
+		string st2 = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql2, "saxophone2");
+		string st3 = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql3, "saxophone3");
 		string st4 = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql4, "clarinet1");
 		string st5 = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql5, "clarinet2");
 		string st6 = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql6, "clarinet3");

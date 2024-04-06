@@ -33,7 +33,7 @@ public partial class Login : System.Web.UI.Page
             }
             else
             {
-                msg = "user of password does not exist";
+                msg = "user does not exist";
             }
          
         }

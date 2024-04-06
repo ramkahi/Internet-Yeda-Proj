@@ -15,11 +15,17 @@
         vertical-align:top;  
     }
    
+    .buy
+    {
+        height: 50px;
+        width: 100px;
+
+    }
 </style>
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="imagesProtected/alto-sax3.jpg" width="600" height="600"/></td>
+        <td><img src="Images/imagesProtected/alto-sax3.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>Jean Paul AS-400 Alto Saxophone - Golden Brass Lacquered</h2>
             <h4>cost: $599</h4>
             <h4>returnable until may 2024</h4>
@@ -33,7 +39,7 @@
             <h4>3. 
                 Beautiful Yellow Brass Body Construction With Lacquer Finish</h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"/>
+                <input type="submit" id="buy" name="buy"  value="buy"/>   
             </form>
         </td>   
 </table>

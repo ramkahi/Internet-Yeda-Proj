@@ -21,7 +21,7 @@
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="imagesShop/tenor%20-%20sax4.jpg" width="600" height="600"/></td>
+        <td><img src="Images/imagesShop/tenor%20-%20sax4.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>EASTROCK Tenor Saxophone B Flat</h2>
             <h4>Laquer Sax Students Beginner</h4>
             <h4>cost: $459</h4>
@@ -47,7 +47,7 @@
 
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"/>
+                <input type="submit" id="buy" name="buy"  value="buy"  />
             </form>
         </td>   
 </table>

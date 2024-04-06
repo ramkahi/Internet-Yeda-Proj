@@ -4,12 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Xml.Linq;
 
 public partial class Admin : System.Web.UI.Page
 {
     public string prTable = "";
     public string prTable2 = "";
-    protected void Page_Load(object sender, EventArgs e)
+	public string prTable3 = "";
+	public string prTable4 = "";
+	protected void Page_Load(object sender, EventArgs e)
     {
 
 
@@ -56,12 +59,34 @@ public partial class Admin : System.Web.UI.Page
                 Response.Redirect("Admin.aspx");
             }
 
-            string sql = "select * from [info]";
-            prTable = MyAdoHelper.printDataTable("Database.mdf", sql);
+            if (Request.Form["change"] != null) 
+            {
+                string colum = Request.Form["colum"];
+                string nValue = Request.Form["NewValue"];
+                string uName3 = Request.Form["uName3"];
+                string sqlChange = "UPDATE [info] SET "+colum+" = '"+nValue+"' WHERE Uname = '" + uName3 + "'";
+                MyAdoHelper.DoQuery("Database.mdf", sqlChange);
+			}
 
+            
+			string sql = "select * from [info]";
+			prTable = MyAdoHelper.printDataTable("Database.mdf", sql);
+
+			
             string sql1 = "SELECT * FROM [info] ORDER BY Age";
-            prTable2 = MyAdoHelper.printDataTable("Database.mdf", sql1);
+			prTable2 = MyAdoHelper.printDataTable("Database.mdf", sql1);
+			
 
-        }
+            
+			string sql3 = "SELECT * FROM [info] WHERE gender = 'male'";
+			prTable3 = MyAdoHelper.printDataTable("Database.mdf", sql3);
+			
+
+            
+			string sql4 = "SELECT * FROM [info] WHERE gender = 'female'";
+			prTable4 = MyAdoHelper.printDataTable("Database.mdf", sql4);
+			
+			
+		}
     }
 }

@@ -21,7 +21,7 @@
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="imagesShop/violin4.jpg" width="600" height="600"/></td>
+        <td><img src="Images/imagesShop/violin4.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>Eastar Violin 4/4 Full Size for </h2>
             <h4>Adults,</h4>
             <h4>cost: $149</h4>
@@ -49,7 +49,7 @@
 
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"/>
+               <input type="submit" id="buy" name="buy"  value="buy"  />
             </form>
         </td>   
 </table>

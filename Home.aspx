@@ -10,7 +10,12 @@
     <h3> you can order it to your adress.</h3>
     
     <style type="text/css">
-
+        .H
+        {
+             text-align:justify;
+             margin: 0 auto;
+             width: 30em;
+        }
         .HPT
         {
             border-spacing: 30px;
@@ -23,8 +28,8 @@
         }
     </style>    
     
-
-
+    <h2>the number of instruments you bought is:</h2>
+    <%=num%>
     <br /> 
     <br />
     <br />
@@ -37,9 +42,9 @@
     <br />
     <table class="HPT" align="center" >
             <tr>
-                <td class="HPTD"><img src="imagesHome/saxophone.jpg" width="350" height="300"/></td>
-                <td class="HPTD"><img src="imagesHome/piano.jpg" width="350" height="300"/></td>
-                <td class="HPTD"><img src="imagesHome/clarinet.jpg" width="350" height="300"/></td>
+                <td class="HPTD"><img src="Images/imagesHome/saxophone.jpg" width="350" height="300"/></td>
+                <td class="HPTD"><img src="Images/imagesHome/piano.jpg" width="350" height="300"/></td>
+                <td class="HPTD"><img src="Images/imagesHome/clarinet.jpg" width="350" height="300"/></td>
             </tr>
         </table>
 

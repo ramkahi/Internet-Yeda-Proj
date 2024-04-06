@@ -10,17 +10,9 @@ public partial class violin3 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["user"].ToString() == "guest")
-        {
-            Response.Redirect("OpenAll.aspx");
-        }
-		string sql1 = "select violin3 from [Stats] where Id = 1;";
 		if (Request.Form["buy"] != null)
 		{
-			string st = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql1, "violin3");
-			int num = Int32.Parse(st) + 1;
-			string sql2 = "update [Stats] set violin3 =" + num + " where Id = 1";
-			MyAdoHelper.DoQuery("Database.mdf", sql2);
+			Response.Redirect("Buy.aspx");
 		}
 	}
 }

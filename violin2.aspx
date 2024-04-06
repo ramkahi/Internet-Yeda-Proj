@@ -21,7 +21,7 @@
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="imagesShop/violin2.jpg" width="600" height="600"/></td>
+        <td><img src="Images/imagesShop/violin2.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>D Z Strad Violin Model 601F</h2>
             <h4> with Inlay Dot-and-Diamond</h4>
             <h4>cost: $1999</h4>
@@ -45,7 +45,7 @@
 
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"/>
+                <input type="submit" id="buy" name="buy"  value="buy"  /> 
             </form>
             
         </td>   

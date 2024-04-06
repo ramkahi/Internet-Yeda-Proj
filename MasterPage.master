@@ -1,20 +1,16 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
 <html>
-<head runat="server">
+<head style="background-color:dodgerblue" runat="server" >
     <title>music instruments for you</title>  
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <script type="text/javascript">
-        document.body.style.backgroundColor = getColor();
-    </script>
 </head>
-<body>
+<body style="background-color:white">
     <link rel="stylesheet" href="css/myStyle.css" />
     
-    <div class="MPB">
         <h2>music instruments for you</h2>
         <style type="text/css">
             .MPT
@@ -24,11 +20,13 @@
                 background-color:lightcoral; 
                 padding-left: 25px;
                 padding-right: 25px;
+                color:black;
+                
             }
             .MPT2
             {
                 border-collapse:collapse;
-                border-style:solid;               
+                border-style:solid;      
             }
             .MPT1
             {
@@ -48,14 +46,13 @@
                     <td class="MPT"><a href="Home.aspx">Home page</a></td>
                     <td class="MPT"><a href="Login.aspx">Login</a></td>
                     <td class="MPT"><a href="OpenAll.aspx">shop</a></td>
-                    <td class="MPT"><a href="Protected.aspx">members only</a></td>
                     <td class="MPT"><a href="Register.aspx">register</a></td>
-                    <td class="MPT"><a href="Admin.aspx">Admin</a></td>
-                    <td class="MPT"><a href="changeColor.aspx">change color</a></td>
+                    <td class="MPT"><a href="Buy.aspx">Buy</a></td>
+                    <td class="MPT"><a href="quiz.aspx">quiz</a></td>
                 </tr>   
             </table>    
         </div>
-    </div>
+    
     <div>
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         

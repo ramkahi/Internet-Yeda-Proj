@@ -21,7 +21,7 @@
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="imagesShop/clarinet4.jpg" width="600" height="600"/></td>
+        <td><img src="Images/imagesShop/clarinet4.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>Jean Paul USA CL-300 Student</h2>
             <h4>Clarinet B Flat</h4>
             <h4>cost: $249</h4>
@@ -46,7 +46,7 @@
                 cork grease
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"/>
+                <input type="submit" id="buy" name="buy"  value="buy"  />
             </form>
         </td>   
 </table>

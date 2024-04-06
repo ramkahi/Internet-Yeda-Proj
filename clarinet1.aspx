@@ -21,7 +21,7 @@
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="imagesShop/clarinet1.jpg" width="600" height="600"/></td>
+        <td><img src="Images/imagesShop/clarinet1.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>ROWELL prClarinet B Flat </h2>
             <h4>for Beginner Student</h4>
             <h4>cost: $408</h4>
@@ -49,7 +49,7 @@
 
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"/>
+                <input type="submit" id="buy" name="buy"  value="buy"  />
             </form>
         </td>   
 </table>
