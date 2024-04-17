@@ -13,16 +13,18 @@
         width: 30em;
         vertical-align:top;  
     }
-    .imgcolor
+    .buy
     {
-        border:dotted;
+        height: 50px;
+        width: 100px;
+        font:20px;
     }
 </style>
 
 <table align="center" class="TaPr">
     <tr>
-        <td><img src="Images/imagesShop/alto%20-%20sax%201.jpg" width="600" height="600"/></td>
-        <td class="TdPo"><h2>Eastar Professional Alto Saxophone E Flat Alto </h2>
+        <td><img src="Images/imagesShop/alto - sax 3.jpg" width="600" height="600"/></td>
+        <td class="TdPo"><h2>Eastar professional alto Saxophone E flat</h2>
             <h4>cost: $399</h4>
             <h4>returnable until 30 days of reseipt</h4>
             <h3>color: gold</h3>                
@@ -45,7 +47,8 @@
             </h4><br />
            
            <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"  />
+                <input class="buy" type="submit" id="add" name="add"  value="Add to cart"/>
+                <input class="buy" type="submit" id="Buy" name="Buy"  value="Buy"/>
            </form>
         </td>   
 </table>

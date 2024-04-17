@@ -68,7 +68,6 @@
                     countCaps++;
                 }
             }
-            window.alert(countCaps);
             if (countCaps == 0) {
                 document.getElementById("submit").type = "button";
                 window.alert("Password needs at least one capital character");

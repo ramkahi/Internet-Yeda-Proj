@@ -13,17 +13,19 @@
         width: 30em;
         vertical-align:top;  
     }
-    .imgcolor
+    .buy
     {
-        border:dotted;
-    }
+        height: 50px;
+        width: 100px;
+        font:20px;
+    }   
 </style>
 
 <table align="center" class="TaPr">
     <tr>
         <td><img src="Images/imagesShop/clarinet4.jpg" width="600" height="600"/></td>
-        <td class="TdPo"><h2>Jean Paul USA CL-300 Student</h2>
-            <h4>Clarinet B Flat</h4>
+        <td class="TdPo"><h2>Jean paul USA CL-300 student</h2>
+            <h2>clarinet B flat</h2>
             <h4>cost: $249</h4>
             <h4>returnable until 30 days of reseipt</h4>
             <h3>color: black and silver</h3>                
@@ -46,7 +48,8 @@
                 cork grease
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"  />
+                <input class="buy" type="submit" id="add" name="add"  value="Add to cart"/>
+                <input class="buy" type="submit" id="buy" name="buy" value="Buy"/>
             </form>
         </td>   
 </table>

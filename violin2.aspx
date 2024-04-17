@@ -13,10 +13,12 @@
         width: 30em;
         vertical-align:top;  
     }
-    .imgcolor
-    {
-        border:dotted;
-    }
+     .buy
+     {
+         height: 50px;
+         width: 100px;
+         font:20px;
+     }
 </style>
 
 <table align="center" class="TaPr">
@@ -45,7 +47,8 @@
 
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"  /> 
+                <input class="buy" type="submit" id="add" name="add"  value="Add to cart"/>
+                <input class="buy" type="submit" id="buy" name="buy" value="Buy"/>  
             </form>
             
         </td>   

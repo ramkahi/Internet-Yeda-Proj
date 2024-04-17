@@ -27,9 +27,6 @@
             padding:0px;
         }
     </style>    
-    
-    <h2>the number of instruments you bought is:</h2>
-    <%=num%>
     <br /> 
     <br />
     <br />

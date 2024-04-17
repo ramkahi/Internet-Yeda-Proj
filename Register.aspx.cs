@@ -27,6 +27,7 @@ public partial class Register : System.Web.UI.Page
 			string pass2 = pass;
             string sql1 = "select * from [info] where Uname='" + Uname + "'";
             string sql3 = "insert into [Stats] (Uname) values ('"+Uname+"')";
+            string sql4 = "insert into [Cart] (Uname) values ('"+Uname+"')";
             string sql2 = "insert into [info] (Uname, pass, pass2, isAdmin, Fname, Lname, gender,age,interests,numYears,favorite,email,phoneNumber) values ('" + Uname + "','" + pass + "' , '" + pass2 + "' ,'" + false + "' ,'" + Fname + "','" + Lname + "' ,'" + gender + "','"+ age + "','"+ interests +"','"+numY+"','"+favorite+"','"+email+"','"+phoneNum+"')";
             if (MyAdoHelper.IsExist("Database.mdf", sql1))
             {
@@ -35,6 +36,7 @@ public partial class Register : System.Web.UI.Page
 
             else
             {
+                MyAdoHelper.DoQuery("Database.mdf", sql4);
                 MyAdoHelper.DoQuery("Database.mdf", sql3);
                 MyAdoHelper.DoQuery("Database.mdf", sql2);
                 Session["user"] = Uname;

@@ -13,17 +13,19 @@
         width: 30em;
         vertical-align:top;  
     }
-    .imgcolor
-    {
-        border:dotted;
-    }
+     .buy
+     {
+         height: 50px;
+         width: 100px;
+         font:20px;
+     }
 </style>
 
 <table align="center" class="TaPr">
     <tr>
         <td><img src="Images/imagesShop/violin4.jpg" width="600" height="600"/></td>
         <td class="TdPo"><h2>Eastar Violin 4/4 Full Size for </h2>
-            <h4>Adults,</h4>
+            <h2>Adults,</h2>
             <h4>cost: $149</h4>
             <h4>returnable until 30 days of reseipt</h4>
             <h3>color: wood</h3>                
@@ -49,7 +51,8 @@
 
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-               <input type="submit" id="buy" name="buy"  value="buy"  />
+                <input class="buy" type="submit" id="add" name="add"  value="Add to cart"/>
+                <input class="buy" type="submit" id="buy" name="buy" value="Buy"/>
             </form>
         </td>   
 </table>

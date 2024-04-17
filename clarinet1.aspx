@@ -13,17 +13,19 @@
         width: 30em;
         vertical-align:top;  
     }
-    .imgcolor
+    .buy
     {
-        border:dotted;
+        height: 50px;
+        width: 100px;
+        font:20px;
     }
 </style>
 
 <table align="center" class="TaPr">
     <tr>
         <td><img src="Images/imagesShop/clarinet1.jpg" width="600" height="600"/></td>
-        <td class="TdPo"><h2>ROWELL prClarinet B Flat </h2>
-            <h4>for Beginner Student</h4>
+        <td class="TdPo"><h2>ROWELL clarinet B flat </h2>
+            <h2>for beginner student</h2>
             <h4>cost: $408</h4>
             <h4>returnable until 30 days of reseipt</h4>
             <h3>color: black and silver</h3>                
@@ -49,7 +51,8 @@
 
             </h4><br />
             <form id="form1" name="form" action="" runat="server" method="post" >
-                <input type="submit" id="buy" name="buy"  value="buy"  />
+                <input class="buy" type="submit" id="add" name="add"  value="Add to cart"/>
+                <input class="buy" type="submit" id="buy" name="buy" value="Buy"/>
             </form>
         </td>   
 </table>

@@ -57,8 +57,9 @@ public class MyAdoHelper
                 s += reader[instrument].ToString() + " ";
             } 
         }
-        finally
+        catch
         {
+            s = " ";
             reader.Close();
         }
 
@@ -66,6 +67,31 @@ public class MyAdoHelper
         conn.Close();
         return s;
     }
+
+    public static string getString(string fileName, string sql,string number)
+    {
+		SqlConnection conn = ConnectToDb(fileName);
+		conn.Open();
+		SqlCommand com = new SqlCommand(sql, conn);
+		SqlDataReader reader = com.ExecuteReader();
+		string s = "";
+		try
+		{
+			while (reader.Read())
+			{
+				s += reader[number].ToString();
+			}
+		}
+		finally
+		{
+			reader.Close();
+		}
+
+		com.Dispose();
+		conn.Close();
+		return s;
+	}
+
 
     /// To Execute update / insert / delete queries
     public static int RowsAffected(string fileName, string sql)

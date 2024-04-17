@@ -43,12 +43,13 @@
         <div>
             <table align="center" class="MPT2"> 
                 <tr>
-                    <td class="MPT"><a href="Home.aspx">Home page</a></td>
-                    <td class="MPT"><a href="Login.aspx">Login</a></td>
+                    <td class="MPT"><a href="Home.aspx">home page</a></td>
+                    <td class="MPT"><a href="Login.aspx">login</a></td>
                     <td class="MPT"><a href="OpenAll.aspx">shop</a></td>
                     <td class="MPT"><a href="Register.aspx">register</a></td>
-                    <td class="MPT"><a href="Buy.aspx">Buy</a></td>
+                    <td class="MPT"><a href="Buy.aspx">buy</a></td>
                     <td class="MPT"><a href="quiz.aspx">quiz</a></td>
+                    <td class="MPT"><a href="Cart.aspx">cart</a></td>
                 </tr>   
             </table>    
         </div>

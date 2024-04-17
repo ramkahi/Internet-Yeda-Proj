@@ -26,17 +26,15 @@
             margin: 0 auto;
             width: 30em;
         }       
+        .buy
+        {
+            height: 50px;
+            width: 100px;
+            font:20px;
+        }
 </style>
     <h1 style="background-color:burlywood">buy</h1>
     <form class="formBuy" id="form1" name="form" action="" runat="server" method="post" onsubmit="return checkCredit()">
-        Select the instrument you want:<br />
-        <select id="instrument" name="instrument" required>
-            <option>saxophone</option><option>clarinet</option><option>violin</option>
-        </select><br /><br />
-        Enter the number of the instrument:<br />
-        <select id="num" name="num">
-            <option>1</option><option>2</option><option>3</option>
-        </select><br />
         Enter cerdit card number:<input type="text" id="creditNum" name="dreditNum" required><br /><br />
         Enter credit card date:<br />
         <select id="month" name="month" required>
@@ -49,7 +47,7 @@
         <option>29</option><option>30</option><option>31</option><option>32</option>
         <option>33</option><option>34</option><option>35</option><option>36</option>
 </select><br /><br />
-    <input type="submit" id="buy" name="buy" value="buy"/>
+    <input class="buy" type="submit" id="buy" name="buy" value="buy"/>
     </form>
 </asp:Content>
 
