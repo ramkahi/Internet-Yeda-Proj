@@ -229,9 +229,6 @@ public partial class Cart : System.Web.UI.Page
 				MyAdoHelper.DoQuery("Database.mdf", sqlNegi);
 			}
 
-
-			ffufjfjjffj
-
 			if (intArr[i] == 0)
 			{
 				sql = "update [Cart] set " + stArr[i] + " = null where Uname = '" + Uname + "'";
