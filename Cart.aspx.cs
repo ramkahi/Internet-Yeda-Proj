@@ -53,7 +53,14 @@ public partial class Cart : System.Web.UI.Page
 		{
 			Response.Redirect("Buy.aspx");
 		}
+		string sqlPlus = "";
+		string sqlNegi = "";
+		int n = 0;
+		string plus = "plus";
+		string negi = "negi";
+		string Uname = Session["user"].ToString();
 
+		//  Cart-מערך המיצג את שדות ה 
 		string[] stArr = new string[9];
 		stArr[0] = "first";
 		stArr[1] = "second";
@@ -65,59 +72,30 @@ public partial class Cart : System.Web.UI.Page
 		stArr[7] = "eighth";
 		stArr[8] = "ninth";
 
+		// טקסט של הכלי
 		string[] text = new string[9];
+		//מחיר הכלי
 		string[] cost = new string[9];
+		//קישור לתמונה
 		string[] img = new string[9];
-		string sql3 = "";
+		// נתנה sql הכלי שהפקודת  
 		string instrument = "";
+		// מערך המיצג את הכלים שיש בקרט
 		string[] Cart = new string[9];
 
-		string[] strings = new string[9];
-		strings[0] = "saxophone1";
-		strings[1] = "saxophone2";
-		strings[2] = "saxophone3";
-		strings[3] = "clarinet1";
-		strings[4] = "clarinet2";
-		strings[5] = "clarinet3";
-		strings[6] = "violin1";
-		strings[7] = "violin2";
-		strings[8] = "violin3";
 		string sql = "";
-		int num2 = 0;
-		string st = "";
-
-		string[] strings2 = new string[9];
-		strings2[0] = "saxophone1";
-		strings2[1] = "saxophone2";
-		strings2[2] = "saxophone3";
-		strings2[3] = "clarinet1";
-		strings2[4] = "clarinet2";
-		strings2[5] = "clarinet3";
-		strings2[6] = "violin1";
-		strings2[7] = "violin2";
-		strings2[8] = "violin3";
-
-		string sqlPlus = "";
-		string sqlNegi = "";
-		int n = 0;
-		int place = 0;
-		string plus = "plus";
-		string negi = "negi";
-		string sqlselect = "";
-		string select = "";
-		string Uname = Session["user"].ToString();
-		
-
+		string numIns = "";
 
 		
 		for (int i = 0; i < 9; i++)
 		{
-			sql3 = "select " + stArr[i] + " from [Cart] where Uname = '" +Uname + "'";
-			instrument = MyAdoHelper.getString("Database.mdf", sql3, stArr[i]);
+			sql = "select " + stArr[i] + " from [Cart] where Uname = '" + Uname + "'";
+			instrument = MyAdoHelper.getString("Database.mdf", sql, stArr[i]);
 			if (instrument == "saxophone1")
 			{
 				img[i] = " Images/imagesShop/alto-sax1.jpg";
 				text[i] = " Jean Paul AS400 Alto Saxophone - Golden Brass Lacquered";
+				n++;
 				cost[i] = " $599";
 			}
 
@@ -126,12 +104,14 @@ public partial class Cart : System.Web.UI.Page
 				img[i] = "Images/imagesShop/tenor - sax2.jpg";
 				text[i] = "EASTROCK tenor saxophone B flat laquer sax students beginner";
 				cost[i] = " $459";
+				n++;
 			}
 			if (instrument == "saxophone3")
 			{
 				img[i] = "Images/imagesShop/alto - sax 3.jpg";
 				text[i] = "Eastar professional alto saxophone E flat";
 				cost[i] = " $399";
+				n++;
 			}
 
 			if (instrument == "clarinet1")
@@ -139,12 +119,14 @@ public partial class Cart : System.Web.UI.Page
 				img[i] = "Images/imagesShop/clarinet1.jpg";
 				text[i] = "ROWELL clarinet B flat for beginner student";
 				cost[i] = " $408";
+				n++;
 			}
 			if (instrument == "clarinet2")
 			{
 				img[i] = "Images/imagesShop/clarinet2.jpg";
 				text[i] = "Mendini by cecilio B flat for feginner student";
 				cost[i] = " $180";
+				n++;
 			}
 
 			if (instrument == "clarinet3")
@@ -152,6 +134,7 @@ public partial class Cart : System.Web.UI.Page
 				img[i] = "Images/imagesShop/clarinet4.jpg";
 				text[i] = "Jean paul USA CL-300 student clarinet B flat";
 				cost[i] = " $249";
+				n++;
 			}
 
 			if (instrument == "violin1")
@@ -159,6 +142,7 @@ public partial class Cart : System.Web.UI.Page
 				img[i] = "Images/imagesShop/violin1.jpg";
 				text[i] = "DZ Strad violin model 101";
 				cost[i] = " $359";
+				n++;
 			}
 
 			if (instrument == "violin2")
@@ -166,17 +150,19 @@ public partial class Cart : System.Web.UI.Page
 				img[i] = "Images/imagesShop/violin2.jpg";
 				text[i] = "D Z Strad violin model 601F with inlay dot and diamond";
 				cost[i] = " $1999";
+				n++;
 			}
 			if (instrument == "violin3")
 			{
 				img[i] = "Images/imagesShop/violin4.jpg";
 				text[i] = "Eastar violin 4/4 full Size for adults";
 				cost[i] = " $149";
+				n++;
 			}
 
-			if(instrument == "")
+			if (instrument == "")
 			{
-				img[i] = "Images/imagesShop/white.jpg";
+				img[i] = "Images/imagesShop/white2.png";
 			}
 			Cart[i] = instrument;
 		}
@@ -216,74 +202,125 @@ public partial class Cart : System.Web.UI.Page
 		text9 = text[8];
 		price9 = cost[8];
 
-		
-		for (int i = 0; i < strings.Length; i++)
-		{//show the number of each instrument the user wants to buy
 
-			sql = "select " + strings[i] + "  from [Stats] where Uname = '" + Session["user"].ToString() + "'";
-			st = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql, strings[i]);
-			if (st != " ")
-			{
-				num2 = Int32.Parse(st);
-			}
-			strings[i] = num2.ToString();
-			num2 = 0;
+		//מערך המיצג את כמות כל כלי במשתמש מסוים
+		int[] intArr = new int[n];
+		for (int i = 0; i < n; i++)
+		{
+			sql = "select " + Cart[i] + "  from [Stats] where Uname = '" + Uname + "'";
+			numIns = MyAdoHelper.DoQueryGetInstrument("Database.mdf", sql, Cart[i]);
+			intArr[i] = Int32.Parse(numIns);
 		}
-		
+
+		for (int i = 0; i < n; i++)
+		{
+			negi = "negi" + (i + 1);
+			plus = "plus" + (i + 1);
+			if (Request.Form[plus] != null)
+			{
+				intArr[i]++;
+				sqlPlus = "update [Stats] set " + Cart[i] + " = " + intArr[i] + " where Uname ='" + Uname + "'";
+				MyAdoHelper.DoQuery("Database.mdf", sqlPlus);
+			}
+			if (Request.Form[negi] != null)
+			{
+				intArr[i]--;
+				sqlNegi = "update [Stats] set " + Cart[i] + " = " + intArr[i] + " where Uname ='" + Uname + "'";
+				MyAdoHelper.DoQuery("Database.mdf", sqlNegi);
+			}
+
+
+			if (intArr[i] == 0)
+			{
+				sql = "update [Cart] set " + stArr[i] + " = null where Uname = '" + Uname + "'";
+				MyAdoHelper.DoQuery("Database.mdf", sql);
+				for (int j = i; j < n - 1; j++)
+				{
+					sql = "update [Cart] set " + stArr[j] + " ='" + Cart[j + 1] + "' where Uname = '" + Uname + "'";
+					MyAdoHelper.DoQuery("Database.mdf", sql);
+					sql = "update [Cart] set " + stArr[j + 1] + " = null where Uname = '" + Uname + "'";
+					MyAdoHelper.DoQuery("Database.mdf", sql);
+				}
+				Response.Redirect("Cart.aspx");
+			}
+		}
 		for (int i = 0; i < 9; i++)
 		{
-			if (Cart[i] != "")
+			sql = "select " + stArr[i] + " from [Cart] where Uname = '" + Uname + "'";
+			instrument = MyAdoHelper.getString("Database.mdf", sql, stArr[i]);
+			if (instrument == "saxophone1")
 			{
-				for (int j = 0; j < 9; j++)
-				{
-					if (strings2[j] == Cart[i])
-					{
-						place = j;
-						j = 9;
-					}
-				}
-				negi = negi + (i + 1);
-				plus = plus + (i + 1);
-				if (Request.Form[plus] != null)
-				{
-					try
-					{
-						n = Int32.Parse(strings[place]);
-					}
-					catch
-					{
-						n = 0;
-					}
-					n++;
-					sqlPlus = "update [Stats] set " + Cart[i] + " = " + n + " where Uname ='" + Uname + "'";
-					MyAdoHelper.DoQuery("Database.mdf", sqlPlus);
-				}
-
-				if (Request.Form[negi] != null)
-				{
-					n = Int32.Parse(strings[place]);
-					n--;
-					sqlNegi = "update [Stats] set " + Cart[i] + " = " + n + " where Uname ='" + Uname + "'";
-					MyAdoHelper.DoQuery("Database.mdf", sqlNegi);
-				}
-
-				n = Int32.Parse(strings[place]);
-				string sqlChange = "";
-				string sql5 = "update [Cart] set " + stArr[place] + " = '' where Uname = '" + Uname+ "'";
-				MyAdoHelper.DoQuery("Database.mdf", sql5);
-
-				if (n <= 0)
-				{
-					for (int j = place; j < 8; j++)
-					{
-						sqlChange = "update [Cart] set " + stArr[j] + " ='" + Cart[j + 1] + "' where Uname = '" + Uname + "'";
-						MyAdoHelper.DoQuery("Database.mdf", sqlChange);
-					}
-				}
-
+				img[i] = " Images/imagesShop/alto-sax1.jpg";
+				text[i] = " Jean Paul AS400 Alto Saxophone - Golden Brass Lacquered";
+				n++;
+				cost[i] = " $599";
 			}
 
+			if (instrument == "saxophone2")
+			{
+				img[i] = "Images/imagesShop/tenor - sax2.jpg";
+				text[i] = "EASTROCK tenor saxophone B flat laquer sax students beginner";
+				cost[i] = " $459";
+				n++;
+			}
+			if (instrument == "saxophone3")
+			{
+				img[i] = "Images/imagesShop/alto - sax 3.jpg";
+				text[i] = "Eastar professional alto saxophone E flat";
+				cost[i] = " $399";
+				n++;
+			}
+
+			if (instrument == "clarinet1")
+			{
+				img[i] = "Images/imagesShop/clarinet1.jpg";
+				text[i] = "ROWELL clarinet B flat for beginner student";
+				cost[i] = " $408";
+				n++;
+			}
+			if (instrument == "clarinet2")
+			{
+				img[i] = "Images/imagesShop/clarinet2.jpg";
+				text[i] = "Mendini by cecilio B flat for feginner student";
+				cost[i] = " $180";
+				n++;
+			}
+
+			if (instrument == "clarinet3")
+			{
+				img[i] = "Images/imagesShop/clarinet4.jpg";
+				text[i] = "Jean paul USA CL-300 student clarinet B flat";
+				cost[i] = " $249";
+				n++;
+			}
+
+			if (instrument == "violin1")
+			{
+				img[i] = "Images/imagesShop/violin1.jpg";
+				text[i] = "DZ Strad violin model 101";
+				cost[i] = " $359";
+				n++;
+			}
+
+			if (instrument == "violin2")
+			{
+				img[i] = "Images/imagesShop/violin2.jpg";
+				text[i] = "D Z Strad violin model 601F with inlay dot and diamond";
+				cost[i] = " $1999";
+				n++;
+			}
+			if (instrument == "violin3")
+			{
+				img[i] = "Images/imagesShop/violin4.jpg";
+				text[i] = "Eastar violin 4/4 full Size for adults";
+				cost[i] = " $149";
+				n++;
+			}
+
+			if (instrument == "")
+			{
+				img[i] = "Images/imagesShop/white2.png";
+			}
 		}
 	}
-	
 }

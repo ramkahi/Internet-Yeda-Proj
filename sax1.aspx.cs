@@ -8,8 +8,8 @@ using System.Web.UI.WebControls;
 
 public partial class Jean_Paul_Alto_Saxophone : System.Web.UI.Page
 {
-    protected void Page_Load(object sender, EventArgs e)
-    {
+	protected void Page_Load(object sender, EventArgs e)
+	{
 		if (Request.Form["add"] != null)
 		{
 			int num = 1;
@@ -38,7 +38,6 @@ public partial class Jean_Paul_Alto_Saxophone : System.Web.UI.Page
 				stArr[6] = "seventh";
 				stArr[7] = "eighth";
 				stArr[8] = "ninth";
-
 				int count = 0;
 				for (int i = 0; i < 9; i++)
 				{
@@ -56,7 +55,7 @@ public partial class Jean_Paul_Alto_Saxophone : System.Web.UI.Page
 					{
 						sql3 = "select " + stArr[i] + " from [Cart] where Uname = '" + Session["user"].ToString() + "'";
 						instrument = MyAdoHelper.getString("Database.mdf", sql3, stArr[i]);
-						if (instrument == " ")
+						if (instrument == "")
 						{
 							sql4 = "update [Cart] set " + stArr[i] + "='saxophone1' where Uname = '" + Session["user"].ToString() + "'";
 							MyAdoHelper.DoQuery("Database.mdf", sql4);
@@ -64,18 +63,17 @@ public partial class Jean_Paul_Alto_Saxophone : System.Web.UI.Page
 						}
 					}
 				}
-
-				else
-				{
-					Response.Write("To add to cart you need to log in    ");
-				}
 			}
 
-			if (Request.Form["Buy"] != null)
+			else
 			{
-				Response.Redirect("Buy.aspx");
+				Response.Write("To add to cart you need to log in    ");
 			}
+		}
 
-		} 
-    }
+		if (Request.Form["Buy"] != null)
+		{
+			Response.Redirect("Buy.aspx");
+		}
+	}
 }

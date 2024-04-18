@@ -17,7 +17,7 @@
      {
          height: 50px;
          width: 100px;
-         font:20px;
+         font:30px;
      }
 </style>
 

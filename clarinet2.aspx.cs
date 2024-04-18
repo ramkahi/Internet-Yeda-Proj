@@ -54,7 +54,7 @@ public partial class clarinet2 : System.Web.UI.Page
 					{
 						sql3 = "select " + stArr[i] + " from [Cart] where Uname = '" + Session["user"].ToString() + "'";
 						instrument = MyAdoHelper.getString("Database.mdf", sql3, stArr[i]);
-						if (instrument == " ")
+						if (instrument == "")
 						{
 							sql4 = "update [Cart] set " + stArr[i] + "='clarinet2' where Uname = '" + Session["user"].ToString() + "'";
 							MyAdoHelper.DoQuery("Database.mdf", sql4);

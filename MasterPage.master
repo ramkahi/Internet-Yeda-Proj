@@ -18,8 +18,8 @@
                 border-collapse:collapse;
                 border-style:solid;
                 background-color:lightcoral; 
-                padding-left: 25px;
-                padding-right: 25px;
+                padding-left:30px;
+                padding-right:30px;
                 color:black;
                 
             }
@@ -38,8 +38,33 @@
                 width:60px;
                 height:60px;
             }
-           
+            .imgM
+            {
+                border:hidden;
+                width: 30px;
+                height: 30px;
+            }
+            .tdM
+            {
+                border-spacing:0px;
+                padding-left:5px;
+                padding-right:5px;
+            }
         </style>
+    <div>
+        <table align="right" >
+            <tr>
+                <td class="tdM">
+                    <a href="Cart.aspx"><img class="imgM" src="Images/imagesHome/cart.jpg" /></a>
+                </td>  
+                
+                 <td class="tdM">
+                        <%=num%>
+                 </td>
+            </tr>
+            
+        </table>
+        </div>
         <div>
             <table align="center" class="MPT2"> 
                 <tr>
@@ -49,7 +74,6 @@
                     <td class="MPT"><a href="Register.aspx">register</a></td>
                     <td class="MPT"><a href="Buy.aspx">buy</a></td>
                     <td class="MPT"><a href="quiz.aspx">quiz</a></td>
-                    <td class="MPT"><a href="Cart.aspx">cart</a></td>
                 </tr>   
             </table>    
         </div>

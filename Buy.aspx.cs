@@ -53,8 +53,10 @@ public partial class Buy : System.Web.UI.Page
 				sum = numI + numU;
 				sqlUpdateI = "update [Stats] set " + strings[i] +"="+ sum +" where Id = 1";
 				MyAdoHelper.DoQuery("Database.mdf",sqlUpdateI);
-				sqlUpdateU = "update [Stats] set " + strings[i] + "= 0 where Uname = '" + Session["user"].ToString()+"'";
+				sqlUpdateU = "update [Stats] set " + strings[i] + "= null where Uname = '" + Session["user"].ToString()+"'";
 				MyAdoHelper.DoQuery("Database.mdf", sqlUpdateU);
+				sqlUpdateU = "update [Cart] set " + strings[i] +" = null where Uname = '"+ Session["user"].ToString() + "'";
+				MyAdoHelper.DoQuery("Database.mdf",sqlUpdateU);
 				Response.Write("The transaction was a success");
 			}
 		}
